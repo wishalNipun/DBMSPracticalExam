@@ -40,4 +40,21 @@ public class StudentCRUDController {
         boolean b = CrudUtil.executeUpdate("DELETE FROM Student WHERE student_id = ?", id);
         return b;
     }
+    public ArrayList<Student> SearchStudent(String id) throws SQLException, ClassNotFoundException {
+        ArrayList <Student> students = new ArrayList<>();
+        ResultSet result = CrudUtil.executeQuery("SELECT * FROM Student WHERE student_id=?",id);
+        while (result.next()){
+            students.add(
+                    new Student(
+                            result.getString(1),
+                            result.getString(2),
+                            result.getString(3),
+                            result.getString(4),
+                            result.getString(5),
+                            result.getString(6)
+                    )
+            );
+        }
+        return students;
+    }
 }

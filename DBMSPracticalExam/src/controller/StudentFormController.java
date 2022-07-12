@@ -100,7 +100,8 @@ public class StudentFormController {
         }
     }
 
-    public void btnSearchOnAction(ActionEvent actionEvent) {
+    public void btnSearchOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+       
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
