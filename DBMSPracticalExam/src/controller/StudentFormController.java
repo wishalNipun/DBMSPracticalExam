@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.Student;
 import view.tm.StudentTM;
 
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 public class StudentFormController {
     public JFXTextField txtStudentId;
     public JFXTextField txtName;
-    public TableView tblStudent;
+    public TableView<StudentTM> tblStudent;
     public TableColumn colStudentId;
     public TableColumn colName;
     public TableColumn colEmail;
@@ -33,6 +34,13 @@ public class StudentFormController {
     private final StudentCRUDController studentCRUDController = new StudentCRUDController();
     public void initialize(){
         loadAllCustomer();
+        colStudentId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colContact.setCellValueFactory(new PropertyValueFactory<>("contact"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colNIC.setCellValueFactory(new PropertyValueFactory<>("nic"));
+
     }
 
     private void loadAllCustomer() {
