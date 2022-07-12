@@ -56,6 +56,7 @@ public class StudentFormController {
             }
         });
 
+
     }
 
     private void clearText() {
@@ -101,6 +102,11 @@ public class StudentFormController {
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+       if (txtStudentId.getText().isEmpty()){
+           btnSave.setText("Save");
+       }else {
+           btnSave.setText("Update");
+       }
         ArrayList<Student> students = studentCRUDController.SearchStudent(txtSearch.getText());
         for (Student s:students
         ) {
@@ -136,5 +142,10 @@ public class StudentFormController {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public void btnNewOnAction(ActionEvent actionEvent) {
+        clearText();
+        btnSave.setText("Save");
     }
 }

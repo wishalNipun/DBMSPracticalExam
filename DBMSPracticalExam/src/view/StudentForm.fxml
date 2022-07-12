@@ -49,5 +49,6 @@
       <JFXTextField fx:id="txtNIC" focusColor="BLACK" labelFloat="true" layoutX="513.0" layoutY="259.0" prefHeight="40.0" prefWidth="200.0" promptText="NIC" unFocusColor="BLACK" />
       <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="770.0" layoutY="106.0" onAction="#btnSearchOnAction" prefHeight="40.0" prefWidth="263.0" style="-fx-background-color: #1abc9c;" text="Search" />
       <TextField fx:id="txtSearch" layoutX="59.0" layoutY="106.0" prefHeight="40.0" prefWidth="693.0" promptText="Search" />
+      <JFXButton fx:id="btnNew" buttonType="RAISED" layoutX="967.0" layoutY="21.0" onAction="#btnNewOnAction" prefHeight="47.0" prefWidth="73.0" style="-fx-background-color: #1abc9c; -fx-background-radius: 2.0em;" text="New +" />
    </children>
 </AnchorPane>
