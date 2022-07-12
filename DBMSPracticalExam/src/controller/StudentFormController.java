@@ -85,6 +85,19 @@ public class StudentFormController {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
+        String id = txtStudentId.getText();
+        try {
+            boolean b = studentCRUDController.deleteStudent(id);
+            if (b){
+                new Alert(Alert.AlertType.CONFIRMATION,"Deleted").show();
+            }
+            clearText();
+            loadAllStudent();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
