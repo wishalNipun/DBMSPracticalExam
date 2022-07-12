@@ -25,4 +25,9 @@ public class StudentCRUDController {
         }
         return students;
     }
+
+    public boolean saveStudent (Student s) throws SQLException, ClassNotFoundException {
+        boolean b = CrudUtil.executeUpdate("INSERT INTO Student VALUES (?,?,?,?,?,?)",s.getId(),s.getName(),s.getEmail(),s.getContact(),s.getAddress(),s.getNic());
+        return b;
+    }
 }
