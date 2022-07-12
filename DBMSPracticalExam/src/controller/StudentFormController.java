@@ -101,7 +101,16 @@ public class StudentFormController {
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-       
+        ArrayList<Student> students = studentCRUDController.SearchStudent(txtSearch.getText());
+        for (Student s:students
+        ) {
+            txtStudentId.setText(s.getId());
+            txtName.setText(s.getName());
+            txtEmail.setText(s.getEmail());
+            txtContact.setText(s.getContact());
+            txtAddress.setText(s.getAddress());
+            txtNIC.setText(s.getNic());
+        }
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
