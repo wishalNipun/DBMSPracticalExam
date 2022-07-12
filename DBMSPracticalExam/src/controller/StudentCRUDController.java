@@ -30,4 +30,9 @@ public class StudentCRUDController {
         boolean b = CrudUtil.executeUpdate("INSERT INTO Student VALUES (?,?,?,?,?,?)",s.getId(),s.getName(),s.getEmail(),s.getContact(),s.getAddress(),s.getNic());
         return b;
     }
+    public boolean updateStudent (Student s) throws SQLException, ClassNotFoundException {
+        boolean b = CrudUtil.executeUpdate("Update Student SET student_name=?,email=?,contact=?,address=? WHERE student_id=?",s.getName(),s.getEmail(),s.getContact(),s.getAddress(),s.getNic(),s.getId());
+        return b;
+
+    }
 }
