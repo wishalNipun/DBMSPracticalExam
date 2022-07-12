@@ -20,14 +20,15 @@
       <JFXTextField fx:id="txtName" focusColor="BLACK" labelFloat="true" layoutX="288.0" layoutY="171.0" prefHeight="40.0" prefWidth="200.0" promptText="Name" unFocusColor="BLACK" />
       <TableView fx:id="tblStudent" layoutX="57.0" layoutY="346.0" prefHeight="340.0" prefWidth="986.0">
          <columns>
-            <TableColumn fx:id="colStudentId" prefWidth="230.0" text="Student Id" />
-            <TableColumn fx:id="colName" prefWidth="233.0" text="Name" />
-            <TableColumn fx:id="colEmail" prefWidth="229.0" text="Email" />
-            <TableColumn fx:id="colAddress" prefWidth="147.0" text="Address" />
-            <TableColumn fx:id="colNIC" prefWidth="146.0" text="NIC" />
+            <TableColumn fx:id="colStudentId" prefWidth="132.0" text="Student Id" />
+            <TableColumn fx:id="colName" prefWidth="164.0" text="Name" />
+            <TableColumn fx:id="colEmail" prefWidth="202.0" text="Email" />
+            <TableColumn fx:id="colAddress" prefWidth="150.0" text="Address" />
+            <TableColumn fx:id="colContact" prefWidth="163.0" text="Contact" />
+            <TableColumn fx:id="colNIC" prefWidth="174.0" text="NIC" />
          </columns>
       </TableView>
-      <JFXTextField fx:id="txtContact" focusColor="BLACK" labelFloat="true" layoutX="62.0" layoutY="259.0" prefHeight="40.0" prefWidth="200.0" promptText="Contact" unFocusColor="BLACK" />
+      <JFXTextField fx:id="txtContact" focusColor="BLACK" labelFloat="true" layoutX="288.0" layoutY="259.0" prefHeight="40.0" prefWidth="200.0" promptText="Contact" unFocusColor="BLACK" />
       <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="775.0" layoutY="266.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: #1abc9c;" text="Save" />
       <Label layoutX="55.0" layoutY="33.0" prefHeight="53.0" prefWidth="410.0" text="Student Management">
          <font>
@@ -43,9 +44,8 @@
          </textFill>
       </Label>
       <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="925.0" layoutY="265.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: #1abc9c;" text="Delete" />
-      <JFXTextField fx:id="txtAddress" focusColor="BLACK" labelFloat="true" layoutX="748.0" layoutY="171.0" prefHeight="40.0" prefWidth="200.0" promptText="Address" unFocusColor="BLACK" />
+      <JFXTextField fx:id="txtAddress" focusColor="BLACK" labelFloat="true" layoutX="62.0" layoutY="259.0" prefHeight="40.0" prefWidth="200.0" promptText="Address" unFocusColor="BLACK" />
       <JFXTextField fx:id="txtEmail" focusColor="BLACK" labelFloat="true" layoutX="513.0" layoutY="171.0" prefHeight="40.0" prefWidth="200.0" promptText="Email" unFocusColor="BLACK" />
-      <JFXTextField fx:id="txtAddress" focusColor="BLACK" labelFloat="true" layoutX="288.0" layoutY="259.0" prefHeight="40.0" prefWidth="200.0" promptText="Address" unFocusColor="BLACK" />
       <JFXTextField fx:id="txtNIC" focusColor="BLACK" labelFloat="true" layoutX="513.0" layoutY="259.0" prefHeight="40.0" prefWidth="200.0" promptText="NIC" unFocusColor="BLACK" />
       <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="770.0" layoutY="106.0" onAction="#btnSearchOnAction" prefHeight="40.0" prefWidth="263.0" style="-fx-background-color: #1abc9c;" text="Search" />
       <TextField fx:id="txtSearch" layoutX="59.0" layoutY="106.0" prefHeight="40.0" prefWidth="693.0" promptText="Search" />
