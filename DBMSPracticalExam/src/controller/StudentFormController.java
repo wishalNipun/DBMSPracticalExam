@@ -3,6 +3,7 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -33,7 +34,7 @@ public class StudentFormController {
     public TextField txtSearch;
     private final StudentCRUDController studentCRUDController = new StudentCRUDController();
     public void initialize(){
-        loadAllCustomer();
+        loadAllStudent();
         colStudentId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -43,8 +44,8 @@ public class StudentFormController {
 
     }
 
-    private void loadAllCustomer() {
-
+    private void loadAllStudent() {
+        tblStudent.getItems().clear();
         try {
             ArrayList<Student> allStudent = studentCRUDController.getAllStudent();
             for (Student s:allStudent
@@ -67,5 +68,23 @@ public class StudentFormController {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        Student student = new Student(txtStudentId.getText(),txtName.getText(),txtEmail.getText(),txtContact.getText(),txtAddress.getText(),txtNIC.getText());
+        try {
+
+            if (btnSave.getText().equals("Save")){
+                boolean save = studentCRUDController.saveStudent(student);
+                if (save){
+                    new Alert(Alert.AlertType.CONFIRMATION,"Saved").show();
+                }
+                loadAllStudent();
+            }else{
+
+
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
