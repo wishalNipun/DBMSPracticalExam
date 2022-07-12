@@ -35,4 +35,9 @@ public class StudentCRUDController {
         return b;
 
     }
+
+    public boolean deleteStudent(String id) throws SQLException, ClassNotFoundException {
+        boolean b = CrudUtil.executeUpdate("DELETE FROM Student WHERE student_id = ?", id);
+        return b;
+    }
 }
