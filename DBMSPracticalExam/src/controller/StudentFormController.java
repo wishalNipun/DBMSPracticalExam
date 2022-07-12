@@ -42,6 +42,29 @@ public class StudentFormController {
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colNIC.setCellValueFactory(new PropertyValueFactory<>("nic"));
 
+        tblStudent.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            btnSave.setText(newValue != null ? "Update" : "Save");
+            if (newValue!= null){
+                txtStudentId.setText(newValue.getId());
+                txtName.setText(newValue.getName());
+                txtAddress.setText(newValue.getAddress());
+                txtEmail.setText(newValue.getEmail());
+                txtNIC.setText(newValue.getNic());
+                txtContact.setText(newValue.getContact());
+            }else {
+                clearText();
+            }
+        });
+
+    }
+
+    private void clearText() {
+        txtStudentId.clear();
+        txtName.clear();
+        txtAddress.clear();
+        txtEmail.clear();
+        txtNIC.clear();
+        txtContact.clear();
     }
 
     private void loadAllStudent() {
@@ -78,7 +101,11 @@ public class StudentFormController {
                 }
                 loadAllStudent();
             }else{
-
+                boolean update = studentCRUDController.updateStudent(student);
+                if (update){
+                    new Alert(Alert.AlertType.CONFIRMATION,"Updated").show();
+                }
+                loadAllStudent();
 
             }
         } catch (SQLException throwables) {
